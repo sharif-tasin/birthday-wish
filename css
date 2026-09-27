@@ -1,0 +1,530 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at top left, #ff8fcf, transparent 35%),
+        radial-gradient(circle at bottom right, #9b7cff, transparent 35%),
+        linear-gradient(135deg, #180d2e, #35134f, #19142f);
+
+    overflow-x: hidden;
+}
+
+
+/* BACKGROUND */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .45;
+    animation: float 8s infinite ease-in-out;
+}
+
+.blob1 {
+    width: 350px;
+    height: 350px;
+    background: #ff72bd;
+    top: 5%;
+    left: -100px;
+}
+
+.blob2 {
+    width: 400px;
+    height: 400px;
+    background: #7667ff;
+    right: -120px;
+    top: 30%;
+    animation-delay: 2s;
+}
+
+.blob3 {
+    width: 300px;
+    height: 300px;
+    background: #ff9a9e;
+    left: 30%;
+    bottom: -100px;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-40px) scale(1.08);
+    }
+}
+
+
+/* GLASS */
+
+.glass {
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25),
+        inset 0 1px 1px rgba(255,255,255,.15);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* LOGIN */
+
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.login-card {
+    width: min(440px, 100%);
+    padding: 45px 35px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.lock {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.login-card h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    opacity: .85;
+    margin-bottom: 25px;
+}
+
+.small-text {
+    font-size: 13px;
+    opacity: .65;
+    margin-bottom: 10px;
+}
+
+.date-input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.12);
+    color: white;
+    font-family: inherit;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.main-btn {
+    border: none;
+    padding: 14px 24px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff77bd, #a783ff);
+    color: white;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 102, 190, .3);
+    transition: .3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.error {
+    color: #ffb5d7;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+
+/* GENERAL */
+
+.hidden {
+    display: none !important;
+}
+
+.section {
+    width: min(1100px, 92%);
+    margin: auto;
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title p,
+.tiny-title {
+    letter-spacing: 4px;
+    font-size: 11px;
+    opacity: .65;
+}
+
+.section-title h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    margin-top: 8px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-card {
+    width: 100%;
+    padding: 80px 45px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.sparkle {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(55px, 9vw, 100px);
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.hero h1 span,
+.final-card h1 span {
+    color: #ff9bd2;
+    text-shadow: 0 0 30px rgba(255, 128, 200, .4);
+}
+
+.hero-text {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.9;
+    opacity: .82;
+}
+
+.scroll-btn {
+    margin-top: 30px;
+    padding: 13px 25px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(255,255,255,.1);
+    color: white;
+    cursor: pointer;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.wish-card {
+    padding: 30px;
+    border-radius: 25px;
+    transition: .3s;
+}
+
+.wish-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,.15);
+}
+
+.wish-card span {
+    font-size: 35px;
+}
+
+.wish-card h3 {
+    margin: 15px 0 10px;
+}
+
+.wish-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: .72;
+}
+
+
+/* MESSAGE */
+
+.message-card {
+    max-width: 800px;
+    margin: auto;
+    padding: 55px;
+    border-radius: 35px;
+    text-align: center;
+}
+
+.message-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.message-card h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 55px;
+    margin: 15px 0 30px;
+}
+
+.message-card p {
+    line-height: 2;
+    margin: 15px 0;
+    opacity: .82;
+}
+
+
+/* PROMISE */
+
+.promise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.promise {
+    border-radius: 22px;
+    padding: 25px;
+}
+
+.promise strong {
+    font-size: 30px;
+    color: #ff9bd2;
+}
+
+.promise p {
+    margin-top: 10px;
+    opacity: .8;
+}
+
+
+/* LETTER */
+
+.letter {
+    max-width: 750px;
+    margin: auto;
+    padding: 55px;
+    border-radius: 30px;
+}
+
+.letter h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.letter p {
+    line-height: 2;
+    margin: 15px 0;
+    opacity: .8;
+}
+
+.letter-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signature {
+    text-align: right;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    color: #ff9bd2;
+}
+
+
+/* CELEBRATION */
+
+.celebration {
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 35px;
+}
+
+.big-emoji {
+    font-size: 75px;
+}
+
+.celebration h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 55px;
+    margin: 10px;
+}
+
+.celebration p {
+    opacity: .75;
+}
+
+.counter {
+    margin: 35px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.counter div {
+    width: 110px;
+    padding: 20px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+.counter strong {
+    display: block;
+    font-size: 30px;
+}
+
+.counter span {
+    font-size: 11px;
+    opacity: .6;
+}
+
+
+/* FINAL */
+
+.final-section {
+    padding-bottom: 40px;
+}
+
+.final-card {
+    text-align: center;
+    padding: 80px 40px;
+    border-radius: 40px;
+}
+
+.final-card h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(50px, 8vw, 85px);
+    margin: 25px 0;
+}
+
+.final-card > p {
+    max-width: 650px;
+    margin: 15px auto;
+    line-height: 1.9;
+    opacity: .8;
+}
+
+.final-wish {
+    color: #ffb2d9;
+}
+
+.fireworks {
+    font-size: 35px;
+}
+
+.surprise {
+    margin: 30px auto 0;
+    max-width: 550px;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+.surprise h2 {
+    margin-bottom: 10px;
+}
+
+.surprise p {
+    line-height: 1.8;
+    opacity: .8;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 13px;
+    opacity: .5;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .promise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-card {
+        padding: 60px 25px;
+    }
+
+    .message-card,
+    .letter {
+        padding: 35px 25px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .cards,
+    .promise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .login-card {
+        padding: 35px 22px;
+    }
+
+    .counter div {
+        width: 90px;
+    }
+
+    .final-card {
+        padding: 60px 22px;
+    }
+}
